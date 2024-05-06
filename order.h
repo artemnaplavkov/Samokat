@@ -1,16 +1,29 @@
 #pragma once
-#include "point.h"
+#include"point.h"
+#include"storage.h"
 
 namespace abstracts {
-	enum State {
-		not_processed,
-		in_progress,
-		completed
+	enum class Condition {
+		dontgot = 0,
+		got = 1,
+		finished = 2,
 	};
-	struct Order {
+
+	class Order {
+	private:
+		Storage _storage;
+		Point _point;
+		Condition _condition;
 		int id;
-		Point target;
-		int storage_id;
-		State state;
+	public:
+		Storage GetStorage();
+		void SetStorage(Storage storage);
+		Point GetPoint();
+		int GetCondition();
+		void SetCondition(Condition condition);
+		int ID();
+
+		Order(int ID);
+		Order(Condition condition, Storage storage, int ID);
 	};
 }
