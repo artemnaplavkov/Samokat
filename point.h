@@ -1,4 +1,5 @@
 #pragma once
+#include <fstream>
 
 namespace abstracts {
 
@@ -7,5 +8,7 @@ namespace abstracts {
 		double y;
 		void input();
 		void print();
+		void save(std::ofstream& os);
+		void read(std::ifstream& is);
 	};
 }

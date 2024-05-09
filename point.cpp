@@ -10,4 +10,10 @@ namespace abstracts {
 	void Point::print() {
 		std::cout << "x=" << x << "; " << "y=" << y<<"; ";
 	}
+	void Point::save(std::ofstream& os) {
+		os << x << " " << y << " ";
+	}
+	void Point::read(std::ifstream& is) {
+		is >> x >> y;
+	}
 }

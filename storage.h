@@ -1,16 +1,17 @@
 #pragma once
 #include "point.h"
-#include <vector>
+#include <fstream>
+
 namespace abstracts {
 
 	struct Storage {
 		int id;
 		Point pos;
-		std::vector<int> courier_ids;
-		std::vector<int> order_ids;
 		
 		void print();
 		void input();
+		void save(std::ofstream &os);
+		void read(std::ifstream& is);
 	};
 
 }
