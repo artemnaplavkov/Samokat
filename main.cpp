@@ -1,6 +1,7 @@
 ﻿#include "courier.h"
 #include "order.h"
 #include "storage.h"
+#include "time_manager.h"
 #include "database_manager.h"
 #include <iostream>
 #include <vector>
@@ -11,6 +12,7 @@ int main() {
 	std::vector<abstracts::Courier> couriers;
 	std::vector<abstracts::Order> orders;
 	DatabaseManager database;
+	TimeManager time_manager;
 
 
 	int stop = 0;
@@ -24,6 +26,7 @@ int main() {
 			<< "\n6-add courier"
 			<< "\n7-print orders"
 			<< "\n8-add order"
+			<< "\n9-time shift"
 			<< "\n";
 		int key;
 		std::cin>>key;
@@ -75,6 +78,13 @@ int main() {
 			abstracts::Order order;
 			order.input();
 			orders.push_back(order);
+			break;
+		}
+		case 9: {
+			std::cout << "hours=";
+			int hours;
+			std::cin >> hours;
+			time_manager.time_shift(hours, storages,couriers,orders);
 			break;
 		}
 		default:
