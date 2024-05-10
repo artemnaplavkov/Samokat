@@ -1,5 +1,7 @@
 #include "point.h"
 #include <iostream>
+#include<math.h>
+
 namespace abstracts {
 	void Point::input() {
 		std::cout << "x=";
@@ -16,7 +18,7 @@ namespace abstracts {
 	void Point::read(std::ifstream& is) {
 		is >> x >> y;
 	}
-	static double Point::length(Point first,Point second) { 
-		return static_cast<double>(sqrt((first.x - second.x) ^ 2 + (first.y - second.y) ^ 2));
+	double Point::length(Point first,Point second) { 
+		return static_cast<double>(pow(sqrt(first.x - second.x),2) + pow((first.y - second.y), 2));
 	 }
 }

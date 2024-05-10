@@ -1,6 +1,7 @@
 #pragma once
 #include"point.h"
 #include"storage.h"
+#include<fstream>
 
 namespace abstracts {
 	enum class Condition {
@@ -11,13 +12,13 @@ namespace abstracts {
 
 	class Order {
 	private:
-		Storage _storage;
+		int storage_id;
 		Point _point;
 		Condition _condition;
 		int id;
 	public:
-		Storage GetStorage();
-		void SetStorage(Storage storage);
+		int GetStorageID();
+		void SetStorageID(int storage);
 
 		void SetCondition(Condition condition);
 		int ID();
@@ -28,5 +29,7 @@ namespace abstracts {
 
 		void input();
 		void print();
+		void save(std::ofstream& os);
+		void read(std::ifstream& is);
 	};
 }
