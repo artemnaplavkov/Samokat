@@ -10,5 +10,6 @@ namespace abstracts {
 		void print();
 		void save(std::ofstream& os);
 		void read(std::ifstream& is);
+		static double length(Point first, Point second);
 	};
 }

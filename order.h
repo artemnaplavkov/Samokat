@@ -18,12 +18,15 @@ namespace abstracts {
 	public:
 		Storage GetStorage();
 		void SetStorage(Storage storage);
-		Point GetPoint();
-		int GetCondition();
+
 		void SetCondition(Condition condition);
 		int ID();
 
-		Order(int ID);
-		Order(Condition condition, Storage storage, int ID);
+		Point GetPoint();
+		int GetCondition();
+
+
+		void input();
+		void print();
 	};
 }

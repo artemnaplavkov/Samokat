@@ -16,4 +16,7 @@ namespace abstracts {
 	void Point::read(std::ifstream& is) {
 		is >> x >> y;
 	}
+	static double Point::length(Point first,Point second) { 
+		return static_cast<double>(sqrt((first.x - second.x) ^ 2 + (first.y - second.y) ^ 2));
+	 }
 }
