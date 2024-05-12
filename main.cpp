@@ -20,13 +20,15 @@ int main() {
 		std::cout
 			<< "\n1-save"
 			<< "\n2-read"
-			<< "\n3-print storages"
-			<< "\n4-add storage"
-			<< "\n5-print couriers"
-			<< "\n6-add courier"
-			<< "\n7-print orders"
-			<< "\n8-add order"
-			<< "\n9-time shift"
+			<< "\n3-time shift"
+			<< "\n4-print storages"
+			<< "\n5-add storage"
+			<< "\n6-remove storage"
+			<< "\n7-print couriers"
+			<< "\n8-add courier"
+			<< "\n9-remove courier"
+			<< "\n10-print orders"
+			<< "\n11-add order"
 			<< "\n";
 		int key;
 		std::cin>>key;
@@ -41,50 +43,65 @@ int main() {
 			database.read(couriers);
 			database.read(orders);
 			break;
-		case 3:
+		case 3: {
+			std::cout << "hours=";
+			int hours;
+			std::cin >> hours;
+			time_manager.time_shift(hours, storages, couriers, orders);
+			break;
+		}
+		case 4:
 			std::cout << "storages:\n";
 			for (int i = 0; i < storages.size(); i++) {
 				storages[i].print();
 				std::cout << "\n";
 			}
 			break;
-		case 4: {
-			abstracts::Storage storage;
-			storage.input();
-			storages.push_back(storage);
+		case 5: {
+			database.add_storage(storages);
 			break;
 		}
-		case 5:
-			std::cout << "couriers:\n";
+		case 6: {
+			std::cout << "removing storage id=";
+			int id;
+			std::cin >> id;
+			database.remove_storage(storages, couriers, orders, id);
+			break;
+		}
+		case 7: {
+			std::cout << "couriers from storage id=";
+			int storage_id;
+			std::cin >> storage_id;
 			for (int i = 0; i < couriers.size(); i++) {
-				couriers[i].print();
-				std::cout << "\n";
+				if (couriers[i].storage_id == storage_id) {
+					couriers[i].print();
+					std::cout << "\n";
+				}
 			}
 			break;
-		case 6: {
-			abstracts::Courier courier;
-			courier.input();
-			couriers.push_back(courier);
+		}
+		case 8: {
+			database.add_courier(couriers, storages);
 			break;
 		}
-		case 7:
+		case 9: {
+			std::cout << "removing courier id=";
+			int id;
+			std::cin >> id;
+			database.remove_courier(couriers, id);
+			break;
+		}
+		case 10:
 			std::cout << "orders:\n";
 			for (int i = 0; i < orders.size(); i++) {
 				orders[i].print();
 				std::cout << "\n";
 			}
 			break;
-		case 8: {
+		case 11: {
 			abstracts::Order order;
 			order.input();
 			orders.push_back(order);
-			break;
-		}
-		case 9: {
-			std::cout << "hours=";
-			int hours;
-			std::cin >> hours;
-			time_manager.time_shift(hours, storages,couriers,orders);
 			break;
 		}
 		default:
