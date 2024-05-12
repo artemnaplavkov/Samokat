@@ -12,10 +12,22 @@ struct DatabaseManager {
 
 	void save(std::vector<abstracts::Storage> &storages);
 	void read(std::vector<abstracts::Storage>& storages);
+	void add_storage(std::vector<abstracts::Storage>& storages);
+	void remove_storage(
+		std::vector<abstracts::Storage>& storages, 
+		std::vector<abstracts::Courier>& couriers,
+		std::vector<abstracts::Order>& orders,
+		int storage_id);
 
-	void save(std::vector<abstracts::Courier>& courier);
-	void read(std::vector<abstracts::Courier>& courier);
+	void save(std::vector<abstracts::Courier>& couriers);
+	void read(std::vector<abstracts::Courier>& couriers);
+	void add_courier(
+		std::vector<abstracts::Courier>& couriers,
+		std::vector<abstracts::Storage>& storages);
+	void remove_courier(
+		std::vector<abstracts::Courier>& couriers,
+		int courier_id);
 
-	void save(std::vector<abstracts::Order>& order);
-	void read(std::vector<abstracts::Order>& order);
+	void save(std::vector<abstracts::Order>& orders);
+	void read(std::vector<abstracts::Order>& orders);
 };
