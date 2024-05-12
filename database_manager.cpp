@@ -41,7 +41,7 @@ void DatabaseManager::remove_storage(
 		}
 	}
 	for (std::vector<abstracts::Order>::iterator ptr = orders.begin(); ptr != orders.end(); ptr++) {
-		if (ptr->storage_id == storage_id and ptr->state!= abstracts::completed) {
+		if (ptr->GetStorageID() == storage_id and ptr->GetCondition() != 2) {
 			std::cout << "there is incomlete order on storage\n";
 			return;
 		}
