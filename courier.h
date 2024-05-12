@@ -14,5 +14,7 @@ namespace abstracts {
 		void input();
 		void save(std::ofstream& os);
 		void read(std::ifstream& is);
+		void set_order(int order_id);
+		int get_order();
 	};
 }
