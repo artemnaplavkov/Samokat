@@ -30,4 +30,7 @@ struct DatabaseManager {
 
 	void save(std::vector<abstracts::Order>& orders);
 	void read(std::vector<abstracts::Order>& orders);
+	void add_order(
+		std::vector<abstracts::Order>& orders,
+		std::vector<abstracts::Storage>& storages);
 };

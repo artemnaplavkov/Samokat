@@ -94,14 +94,14 @@ int main() {
 		case 10:
 			std::cout << "orders:\n";
 			for (int i = 0; i < orders.size(); i++) {
-				orders[i].print();
-				std::cout << "\n";
+				if (orders[i].state != abstracts::completed) {
+					orders[i].print();
+					std::cout << "\n";
+				}
 			}
 			break;
 		case 11: {
-			abstracts::Order order;
-			order.input();
-			orders.push_back(order);
+			database.add_order(orders, storages);
 			break;
 		}
 		default:
