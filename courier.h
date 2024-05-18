@@ -1,5 +1,6 @@
 #pragma once
 #include "point.h"
+#include "order.h"
 #include <fstream>
 
 namespace abstracts {
@@ -14,7 +15,9 @@ namespace abstracts {
 		void input();
 		void save(std::ofstream& os);
 		void read(std::ifstream& is);
+		void set_order(abstracts::Order* order);
 		void set_order(int order_id);
+		void set_point(Point point);
 		int get_order();
 	};
 }

@@ -1,4 +1,4 @@
-#include "Order.h"
+#include "order.h"
 #include<iostream>
 
 using namespace std;
@@ -19,6 +19,7 @@ namespace abstracts {
 		cout << "order id: " << id << endl;
 		cout << "storage id: " << storage_id << endl;
 		cout << "order position: " << endl << "x: " << _point.x << endl << "y: " << _point.y << endl;
+		cout << "time to end: " << time_to_complete << endl;
 	}
 	void Order::input() {
 		std::cout << "id=";
@@ -26,18 +27,29 @@ namespace abstracts {
 		std::cout << "storage_id=";
 		std::cin >> storage_id;
 		_condition = Condition::dontgot;
+		time_to_complete = 0.f;
 		_point.input();
 	}
 	void Order::save(std::ofstream& os) {
 		os << id << " "
 			<< storage_id << " "
-			<< this->GetCondition() << " ";
+			<< this->GetCondition() << " "
+			<< time_to_complete << " ";
 		_point.save(os);
 	}
 	void Order::read(std::ifstream& is) {
 		int cond_id;
-		is >> id >> storage_id >> cond_id;
+		is >> id >> storage_id >> cond_id >> time_to_complete;
 		SetCondition(static_cast<Condition>(cond_id));
 		_point.read(is);
+	}
+	void Order::set_time(float time) {
+		time_to_complete = time;
+	}
+	void Order::time_gone(float time) {
+		time_to_complete -= time;
+	}
+	float Order::get_time() {
+		return time_to_complete;
 	}
 }

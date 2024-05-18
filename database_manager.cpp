@@ -84,6 +84,7 @@ void DatabaseManager::add_courier(
 	}
 	for (std::vector<abstracts::Storage>::iterator ptr = storages.begin(); ptr != storages.end(); ptr++) {
 		if (ptr->id == courier.storage_id) {
+			courier.set_point((*ptr).pos);
 			couriers.push_back(courier);
 			return;
 		}

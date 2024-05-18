@@ -12,6 +12,7 @@ namespace abstracts {
 
 	class Order {
 	private:
+		float time_to_complete;
 		int storage_id;
 		Point _point;
 		Condition _condition;
@@ -31,5 +32,9 @@ namespace abstracts {
 		void print();
 		void save(std::ofstream& os);
 		void read(std::ifstream& is);
+
+		void set_time(float time);
+		float get_time();
+		void time_gone(float time);
 	};
 }
