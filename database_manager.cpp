@@ -123,3 +123,22 @@ void DatabaseManager::read(std::vector<abstracts::Order>& orders) {
 			orders.push_back(order);
 	}
 }
+void DatabaseManager::add_order(
+		std::vector<abstracts::Order>& orders,
+		std::vector<abstracts::Storage>& storages) {
+	abstracts::Order order;
+	order.input();
+	for (std::vector<abstracts::Order>::iterator ptr = orders.begin(); ptr != orders.end(); ptr++) {
+		if (ptr->id == order.id) {
+			std::cout << "order id is already used\n";
+			return;
+		}
+	}
+	for (std::vector<abstracts::Storage>::iterator ptr = storages.begin(); ptr != storages.end(); ptr++) {
+		if (ptr->id == order.storage_id) {
+			orders.push_back(order);
+			return;
+		}
+	}
+	std::cout << "there is no storage with this id\n";
+}
