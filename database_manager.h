@@ -6,6 +6,12 @@
 #include <string>
 
 struct DatabaseManager {
+	/*!
+		\authors Наплавков Артем
+		\brief Менеджер базы данных, управляет базами данных и их содержанием
+		Этот класс осуществляет работу с базами данных складов, курьеров и заказов
+		Обладает функциями добавления, удаления сущностей, а также сохранением каждой базы данных в текстовый файл
+	!*/
 	std::string storage_file_name = "./storage.txt";
 	std::string order_file_name = "./order.txt";
 	std::string courier_file_name = "./courier.txt";

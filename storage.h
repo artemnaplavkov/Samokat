@@ -3,7 +3,11 @@
 #include <fstream>
 
 namespace abstracts {
-
+	/*!
+		\authors Наплавков Артем
+		Абстракция, хранящая в себе информацию о складе: идентификатор, положение
+		Коммуницирует с базами данных
+	!*/
 	struct Storage {
 		int id;
 		Point pos;

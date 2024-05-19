@@ -6,6 +6,10 @@
 #include <vector>
 
 struct TimeManager{
+	/*!
+		\authors Плаксина Екатерина
+		Менеджер времени, проматывает время вперед и активирует алгоритмы учета времени
+	!*/
 	void time_shift(float hours,
 		std::vector<abstracts::Storage>* storages,
 		std::vector<abstracts::Courier>* couriers,
