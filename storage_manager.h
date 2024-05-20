@@ -5,11 +5,11 @@
 
 namespace AbstractManagers {
 	/*!
-		\authors Соловьев Данила
-		\brief Менеджер складов, распределяет заказы между курьерами
+		\authors РЎРѕР»РѕРІСЊРµРІ Р”Р°РЅРёР»Р°
+		\brief РњРµРЅРµРґР¶РµСЂ СЃРєР»Р°РґРѕРІ, СЂР°СЃРїСЂРµРґРµР»СЏРµС‚ Р·Р°РєР°Р·С‹ РјРµР¶РґСѓ РєСѓСЂСЊРµСЂР°РјРё
 	!*/
 	class Storage_manager {
 	public:
-		static void distribute_orders(std::vector<abstracts::Courier>* couriers, std::vector<abstracts::Order>* orders);
+		static void distribute_orders(std::vector<abstracts::Courier>* couriers, std::vector<abstracts::Order>* orders);///СЂР°СЃРїСЂРµРґРµР»СЏРµС‚ Р·Р°РєР°Р·С‹ РЅР° СЃРєР»Р°РґРµ РјРµР¶РґСѓ РєСѓСЂСЊРµСЂР°РјРё
 	};
 }

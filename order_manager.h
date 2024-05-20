@@ -4,11 +4,11 @@
 namespace AbstractManagers
 {
 	/*!
-		\authors Соловьев Данила
-		Менеджер заказа, устанавливающий состояние заказа
+		\authors РЎРѕР»РѕРІСЊРµРІ Р”Р°РЅРёР»Р°
+		РњРµРЅРµРґР¶РµСЂ Р·Р°РєР°Р·Р°, СѓСЃС‚Р°РЅР°РІР»РёРІР°СЋС‰РёР№ СЃРѕСЃС‚РѕСЏРЅРёРµ Р·Р°РєР°Р·Р°
 	!*/
 	class Order_Manager {
 	public:
-		static void SetCondition(abstracts::Order& order, int condition_id);
+		static void SetCondition(abstracts::Order& order, int condition_id); ///СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ Р·Р°РєР°Р·Р°
 	};
 }

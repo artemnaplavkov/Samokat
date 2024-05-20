@@ -7,11 +7,11 @@
 
 struct TimeManager{
 	/*!
-		\authors Плаксина Екатерина
-		Менеджер времени, проматывает время вперед и активирует алгоритмы учета времени
+		\authors РџР»Р°РєСЃРёРЅР° Р•РєР°С‚РµСЂРёРЅР°
+		РњРµРЅРµРґР¶РµСЂ РІСЂРµРјРµРЅРё, РїСЂРѕРјР°С‚С‹РІР°РµС‚ РІСЂРµРјСЏ РІРїРµСЂРµРґ Рё Р°РєС‚РёРІРёСЂСѓРµС‚ Р°Р»РіРѕСЂРёС‚РјС‹ СѓС‡РµС‚Р° РІСЂРµРјРµРЅРё
 	!*/
 	void time_shift(float hours,
 		std::vector<abstracts::Storage>* storages,
 		std::vector<abstracts::Courier>* couriers,
-		std::vector<abstracts::Order>* orders);
+		std::vector<abstracts::Order>* orders); ///РїСЂРѕРјР°С‚С‹РІР°РµС‚ РІСЂРµРјСЏ
 };

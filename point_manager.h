@@ -2,12 +2,12 @@
 #include "point.h"
 namespace singletones {
 	/*!
-		\authors Кукош Таисия
-		Менеджер точки, сравнивает точки на равенство, вычисляет дистанцию между точками и создает новые абстракции
+		\authors РљСѓРєРѕС€ РўР°РёСЃРёСЏ
+		РњРµРЅРµРґР¶РµСЂ С‚РѕС‡РєРё, СЃСЂР°РІРЅРёРІР°РµС‚ С‚РѕС‡РєРё РЅР° СЂР°РІРµРЅСЃС‚РІРѕ, РІС‹С‡РёСЃР»СЏРµС‚ РґРёСЃС‚Р°РЅС†РёСЋ РјРµР¶РґСѓ С‚РѕС‡РєР°РјРё Рё СЃРѕР·РґР°РµС‚ РЅРѕРІС‹Рµ Р°Р±СЃС‚СЂР°РєС†РёРё
 	!*/
 	struct PointManager{
-		static double get_distance(abstracts::Point& a, abstracts::Point& b);
-		static bool equal(abstracts::Point& a, abstracts::Point& b);
-		static abstracts::Point new_point(abstracts::Point& a, abstracts::Point& b, double speed_kmh);
+		static double get_distance(abstracts::Point& a, abstracts::Point& b); ///РІС‹С‡РёСЃР»СЏРµС‚ РґРёСЃС‚Р°РЅС†РёСЋ РѕС‚ С‚РѕС‡РєРё Р° РґРѕ С‚РѕС‡РєРё Р±
+		static bool equal(abstracts::Point& a, abstracts::Point& b); ///СЃСЂР°РІРЅРёРІР°РµС‚ РЅР° СЂР°РІРµРЅСЃС‚РІРѕ РґРІРµ С‚РѕС‡РєРё
+		static abstracts::Point new_point(abstracts::Point& a, abstracts::Point& b, double speed_kmh); ///СЃРѕР·РґР°РµС‚ РЅРѕРІСѓСЋ С‚РѕС‡РєСѓ
 	};
 }
