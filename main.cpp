@@ -3,6 +3,7 @@
 #include "storage.h"
 #include "time_manager.h"
 #include "database_manager.h"
+#include "storage_manager.h"
 #include <iostream>
 #include <vector>
 
@@ -42,12 +43,13 @@ int main() {
 			database.read(storages);
 			database.read(couriers);
 			database.read(orders);
+			AbstractManagers::Storage_manager::distribute_orders(&couriers, &orders);
 			break;
 		case 3: {
 			std::cout << "hours=";
 			int hours;
 			std::cin >> hours;
-			time_manager.time_shift(hours, storages, couriers, orders);
+			time_manager.time_shift(hours, &storages, &couriers, &orders);
 			break;
 		}
 		case 4:
@@ -94,7 +96,7 @@ int main() {
 		case 10:
 			std::cout << "orders:\n";
 			for (int i = 0; i < orders.size(); i++) {
-				if (orders[i].state != abstracts::completed) {
+				if (orders[i].GetCondition() != static_cast<int>(abstracts::Condition::finished)) {
 					orders[i].print();
 					std::cout << "\n";
 				}
@@ -102,6 +104,7 @@ int main() {
 			break;
 		case 11: {
 			database.add_order(orders, storages);
+			AbstractManagers::Storage_manager::distribute_orders(&couriers, &orders);
 			break;
 		}
 		default:

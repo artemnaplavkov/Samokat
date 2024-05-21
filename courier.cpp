@@ -32,7 +32,8 @@ namespace abstracts {
 	}
 	void Courier::set_order(abstracts::Order* order) {
 		current_order_id = (*order).ID();
-		(*order).set_time(abstracts::Point::length(pos,(*order).GetPoint())/speed_kmh);
+		Point sec_pos = order->GetPoint();
+		(*order).set_time(singletones::PointManager::get_distance(pos,sec_pos)/speed_kmh);
 	}
 	void Courier::set_order(int order_id) {
 		current_order_id = order_id;

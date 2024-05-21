@@ -1,7 +1,4 @@
 /.vs
 *.txt
+*.exe
 *.o
-makefile
-time_manager.cpp
-time_manager.cpp
-time_manager.cpp

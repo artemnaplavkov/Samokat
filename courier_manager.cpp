@@ -2,6 +2,7 @@
 
 namespace AbstractManagers {
 	float Courier_Manager::get_time(abstracts::Courier courier, abstracts::Order order) {
-		return static_cast<float>(abstracts::Point::length(courier.pos, order.GetPoint())/courier.speed_kmh);
+		abstracts::Point sec_pos = order.GetPoint();
+		return static_cast<float>(singletones::PointManager::get_distance(courier.pos, sec_pos)/courier.speed_kmh);
 	}
 }
