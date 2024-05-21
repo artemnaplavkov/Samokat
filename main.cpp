@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 
+
 int main() {
 	std::vector<abstracts::Storage> storages;
 	std::vector<abstracts::Courier> couriers;
@@ -109,5 +110,5 @@ int main() {
 			break;
 		}
 	}
-	return 0;
+
 }

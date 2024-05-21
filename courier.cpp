@@ -18,7 +18,6 @@ namespace abstracts {
 		std::cout << "storage_id=";
 		std::cin >> storage_id;
 		current_order_id = -1;
-		pos.input();
 	}
 	void Courier::save(std::ofstream& os) {
 		os << id << " "
@@ -31,8 +30,15 @@ namespace abstracts {
 		is >> id >> speed_kmh >> storage_id >> current_order_id;
 		pos.read(is);
 	}
+	void Courier::set_order(abstracts::Order* order) {
+		current_order_id = (*order).ID();
+		(*order).set_time(abstracts::Point::length(pos,(*order).GetPoint())/speed_kmh);
+	}
 	void Courier::set_order(int order_id) {
 		current_order_id = order_id;
+	}
+	void Courier::set_point(abstracts::Point point) {
+		pos = point;
 	}
 	int Courier::get_order() {
 		return current_order_id;
