@@ -50,4 +50,5 @@ struct DatabaseManager {
 	void add_order(
 		std::vector<abstracts::Order>& orders,
 		std::vector<abstracts::Storage>& storages);///добавляет новый заказ в базу данных
+
 };
