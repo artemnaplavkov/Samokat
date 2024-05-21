@@ -17,7 +17,7 @@ namespace abstracts {
 		std::cin >> speed_kmh;
 		std::cout << "storage_id=";
 		std::cin >> storage_id;
-		current_order_id = 0;
+		current_order_id = -1;
 		pos.input();
 	}
 	void Courier::save(std::ofstream& os) {
@@ -30,5 +30,11 @@ namespace abstracts {
 	void Courier::read(std::ifstream& is) {
 		is >> id >> speed_kmh >> storage_id >> current_order_id;
 		pos.read(is);
+	}
+	void Courier::set_order(int order_id) {
+		current_order_id = order_id;
+	}
+	int Courier::get_order() {
+		return current_order_id;
 	}
 }
