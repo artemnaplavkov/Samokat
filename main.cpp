@@ -47,7 +47,7 @@ int main() {
 			std::cout << "hours=";
 			int hours;
 			std::cin >> hours;
-			time_manager.time_shift(hours, storages, couriers, orders);
+			time_manager.time_shift(hours, &storages, &couriers, &orders);
 			break;
 		}
 		case 4:
@@ -94,7 +94,7 @@ int main() {
 		case 10:
 			std::cout << "orders:\n";
 			for (int i = 0; i < orders.size(); i++) {
-				if (orders[i].state != abstracts::completed) {
+				if (orders[i].GetCondition() != static_cast<int>(abstracts::Condition::finished)) {
 					orders[i].print();
 					std::cout << "\n";
 				}

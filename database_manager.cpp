@@ -129,13 +129,13 @@ void DatabaseManager::add_order(
 	abstracts::Order order;
 	order.input();
 	for (std::vector<abstracts::Order>::iterator ptr = orders.begin(); ptr != orders.end(); ptr++) {
-		if (ptr->id == order.id) {
+		if (ptr->ID() == order.ID()) {
 			std::cout << "order id is already used\n";
 			return;
 		}
 	}
 	for (std::vector<abstracts::Storage>::iterator ptr = storages.begin(); ptr != storages.end(); ptr++) {
-		if (ptr->id == order.storage_id) {
+		if (ptr->id == order.GetStorageID()) {
 			orders.push_back(order);
 			return;
 		}
