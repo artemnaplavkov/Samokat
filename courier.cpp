@@ -30,6 +30,7 @@ namespace abstracts {
 		is >> id >> speed_kmh >> storage_id >> current_order_id;
 		pos.read(is);
 	}
+	/*
 	void Courier::set_order(abstracts::Order* order) {
 		current_order_id = (*order).ID();
 		(*order).set_time(abstracts::Point::length(pos,(*order).GetPoint())/speed_kmh);
@@ -43,4 +44,5 @@ namespace abstracts {
 	int Courier::get_order() {
 		return current_order_id;
 	}
+	*/
 }

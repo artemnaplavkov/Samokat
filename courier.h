@@ -25,7 +25,7 @@ namespace abstracts {
 		void save(std::ofstream& os);///сохраняет сущность в файл
 		
 		void read(std::ifstream& is);///загружает данные из файла
-		
+		/*
 		void set_order(abstracts::Order* order);///устанавливает новый заказ по абстракции
 		
 		void set_order(int order_id);///устанавливает новый заказ по идентификатору
@@ -33,5 +33,6 @@ namespace abstracts {
 		void set_point(Point point);///устанавливает точку положения
 		
 		int get_order();///дает идентификатор заказа
+		*/
 	};
 }

@@ -8,11 +8,17 @@ namespace abstracts {
 		\authors Соловьев Данила
 		\brief Список состояний, которые может принимать заказ
 	!*/
+	int const not_processed = 0;
+	int const in_progress = 1;
+	int const completed = 2;
+
+	/*
 	enum class Condition {
 		dontgot = 0,
 		got = 1,
 		finished = 2,
 	};
+	*/
 
 	/*!
 		\authors Соловьев Данила
@@ -20,6 +26,18 @@ namespace abstracts {
 		Хранит в себе информацию о заказе: время до выполнения, идентификатор склада, положение, состояние, идентификатор
 		Обладает функциями получения/загрузки данных, коммуницирует с базами данных
 	!*/
+	struct Order {
+		int id;
+		int storage_id;
+		int state;
+		Point target;
+
+		void print();
+		void input();
+		void save(std::ofstream& os);
+		void read(std::ifstream& is);
+	};
+	/*
 	class Order {
 	private:
 		float time_to_complete;
@@ -59,4 +77,5 @@ namespace abstracts {
 		
 		void time_gone(float time);///проматывает время сдачи заказа
 	};
+	*/
 }
