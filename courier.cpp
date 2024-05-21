@@ -17,7 +17,8 @@ namespace abstracts {
 		std::cin >> speed_kmh;
 		std::cout << "storage_id=";
 		std::cin >> storage_id;
-		current_order_id = -1;
+		current_order_id = 0;
+		pos.input();
 	}
 	void Courier::save(std::ofstream& os) {
 		os << id << " "
@@ -33,7 +34,8 @@ namespace abstracts {
 	/*
 	void Courier::set_order(abstracts::Order* order) {
 		current_order_id = (*order).ID();
-		(*order).set_time(abstracts::Point::length(pos,(*order).GetPoint())/speed_kmh);
+		Point sec_pos = order->GetPoint();
+		(*order).set_time(singletones::PointManager::get_distance(pos,sec_pos)/speed_kmh);
 	}
 	void Courier::set_order(int order_id) {
 		current_order_id = order_id;

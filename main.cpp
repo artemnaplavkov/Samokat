@@ -31,7 +31,7 @@ int main() {
 			<< "\n11-add order"
 			<< "\n";
 		int key;
-		std::cin>>key;
+		std::cin >> key;
 		switch (key) {
 		case 1:
 			database.save(storages);
@@ -105,7 +105,7 @@ int main() {
 			break;
 		}
 		default:
-			std::cout <<"bye\n";
+			std::cout << "bye\n";
 			stop = 1;
 			break;
 		}

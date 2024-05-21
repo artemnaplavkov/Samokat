@@ -41,7 +41,6 @@ void DatabaseManager::remove_storage(
 		}
 	}
 	for (std::vector<abstracts::Order>::iterator ptr = orders.begin(); ptr != orders.end(); ptr++) {
-		//if (ptr->GetStorageID() == storage_id and ptr->GetCondition() != 2) {
 		if (ptr->storage_id == storage_id and ptr->state != abstracts::completed) {
 			std::cout << "there is incomlete order on storage\n";
 			return;
@@ -74,7 +73,7 @@ void DatabaseManager::read(std::vector<abstracts::Courier>& couriers) {
 }
 void DatabaseManager::add_courier(
 	std::vector<abstracts::Courier>& couriers,
-	std::vector<abstracts::Storage>& storages){
+	std::vector<abstracts::Storage>& storages) {
 	abstracts::Courier courier;
 	courier.input();
 	for (std::vector<abstracts::Courier>::iterator ptr = couriers.begin(); ptr != couriers.end(); ptr++) {
@@ -85,7 +84,6 @@ void DatabaseManager::add_courier(
 	}
 	for (std::vector<abstracts::Storage>::iterator ptr = storages.begin(); ptr != storages.end(); ptr++) {
 		if (ptr->id == courier.storage_id) {
-			//courier.set_point((*ptr).pos);
 			couriers.push_back(courier);
 			return;
 		}
@@ -94,7 +92,7 @@ void DatabaseManager::add_courier(
 }
 void DatabaseManager::remove_courier(
 	std::vector<abstracts::Courier>& couriers,
-	int courier_id){
+	int courier_id) {
 	for (std::vector<abstracts::Courier>::iterator ptr = couriers.begin(); ptr != couriers.end(); ptr++) {
 		if (ptr->id != courier_id)
 			continue;
@@ -125,8 +123,8 @@ void DatabaseManager::read(std::vector<abstracts::Order>& orders) {
 	}
 }
 void DatabaseManager::add_order(
-		std::vector<abstracts::Order>& orders,
-		std::vector<abstracts::Storage>& storages) {
+	std::vector<abstracts::Order>& orders,
+	std::vector<abstracts::Storage>& storages) {
 	abstracts::Order order;
 	order.input();
 	for (std::vector<abstracts::Order>::iterator ptr = orders.begin(); ptr != orders.end(); ptr++) {

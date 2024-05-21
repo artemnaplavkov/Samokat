@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace AbstractManagers {
-
+	/*
 	void Storage_manager::distribute_orders(vector<abstracts::Courier>* couriers, vector<abstracts::Order>* orders) {
 		for (int i = 0; i < orders->size(); i++) {
 			if ((*orders)[i].GetCondition() >= 1)
@@ -20,4 +20,5 @@ namespace AbstractManagers {
 				break;
 		}
 	}
+	*/
 }

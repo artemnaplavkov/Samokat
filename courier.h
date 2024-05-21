@@ -1,6 +1,7 @@
 #pragma once
 #include "point.h"
 #include "order.h"
+#include "point_manager.h"
 #include <fstream>
 
 namespace abstracts {

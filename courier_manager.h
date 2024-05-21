@@ -2,6 +2,7 @@
 #include"courier.h"
 #include"order.h"
 #include"point.h"
+#include"point_manager.h"
 
 namespace AbstractManagers {
 	/*!
